@@ -10,6 +10,7 @@ st.markdown('''
 
 url = 'https://taxifare.lewagon.ai/predict?pickup_datetime=2013-07-06%2017:18:00&pickup_longitude=-73.950655&pickup_latitude=40.783282&dropoff_longitude=-73.984365&dropoff_latitude=40.769802&passenger_count=1'
 url2 = 'https://taxifare.lewagon.ai/predict'
+url3 = 'https://pl-app2-cont-op4wl2zmrq-ew.a.run.app/predict'
 if url == 'https://taxifare.lewagon.ai/predict':
 
     #date_time = st.text_area('date and time', '''12/09/2021''')
@@ -24,7 +25,7 @@ if url == 'https://taxifare.lewagon.ai/predict':
 '''
 # 2.
 params = {
-    'pickup_datetime': datetime.strptime('2013-07-06 2017:18:00', "%Y-%m-%d"),
+    'pickup_datetime': '2013-07-06 17:18:00',
     'pickup_longitude': -73.950655,
     'pickup_latitude': 40.783282,
     'dropoff_longitude': -73.984365,
@@ -33,7 +34,7 @@ params = {
 }
 
 # 3.
-response = requests.get(url2, params)
+response = requests.get(url3, params)
 #response = requests.get(url)
 pred = response.json()
 print(pred)
